@@ -13,9 +13,37 @@ export default class SecondScreen extends Component {
       bottomTab: {
         text: 'Tab 2',
         icon: require('./assets/question-circle.png'),
-      }
+      },
+      // animations: {
+      //   push: {
+      //     topBar: {
+      //       alpha: {
+      //         from: 0,
+      //         to: 1,
+      //         duration: 250,
+      //       },
+      //     },
+      //   },
+      //   pop: {
+      //     content: {
+      //       alpha: {
+      //         from: 1,
+      //         to: 0,
+      //         duration: 250,
+      //       },
+      //     },
+      //     topBar: {
+      //       alpha: {
+      //         from: 1,
+      //         to: 0,
+      //         duration: 250,
+      //       },
+      //     },
+      //   },
+      // },
     };
   }
+
   render() {
     return (
       <View style={styles.container}>
@@ -28,6 +56,12 @@ export default class SecondScreen extends Component {
                 name: 'example.FirstScreen',
               },
             });
+          }}
+        />
+        <Button
+          title="Pop"
+          onPress={() => {
+            Navigation.pop(this.props.componentId);
           }}
         />
       </View>
